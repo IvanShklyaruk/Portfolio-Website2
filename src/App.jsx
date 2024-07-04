@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Scroll, ScrollControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { MotionConfig } from "framer-motion";
+import { Suspense } from "react";
+import { Experience } from "./components/Experience";
+import { Interface } from "./components/Interface";
+import { LoadingScreen } from "./components/LoadingScreen";
+import { Menu } from "./components/Menu";
+import { config } from "./config";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <LoadingScreen />
+      <Canvas camera={{ position: [0, 0.5, 5], fov: 42 }}>
+        <color attach="background" args={["#f5f3ee"]} />
+        <fog attach="fog" args={["#f5f3ee", 10, 50]} />
+        <ScrollControls
+          pages={config.sections.length}
+          damping={0.1}
+          maxSpeed={0.2}
+        >
+          <group position-y={-1}>
+            <MotionConfig
+              transition={{
+                duration: 0.6,
+              }}
+            >
+              <Suspense>
+                <Experience />
+              </Suspense>
+            </MotionConfig>
+          </group>
+          <Scroll html>
+            <MotionConfig transition={{ duration: 1 }}>
+              <Interface />
+            </MotionConfig>
+          </Scroll>
+        </ScrollControls>
+      </Canvas>
+      <Menu />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
