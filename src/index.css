@@ -216,7 +216,7 @@ a {
 
 .menu {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 1rem;
   position: fixed;
@@ -225,12 +225,6 @@ a {
   right: 4rem;
   background: #f5f3ef8a;
   backdrop-filter: blur(8px);
-}
-
-.menu__logo {
-  height: 42px;
-  width: 120px;
-  object-fit: contain;
 }
 
 .menu__buttons {
@@ -269,17 +263,8 @@ a {
 }
 
 .loading-screen--hidden {
-  animation: fade-out 0.5s ease-in-out forwards 1s;
+  opacity: 0;
   pointer-events: none;
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }
 
 .loading-screen__title {
@@ -304,6 +289,37 @@ a {
   height: 100%;
   background-color: var(--text-color);
   transition: width 0.5s ease-in-out;
+}
+
+.prompt {
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.prompt__message {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.prompt__close {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.prompt__close:hover {
+  background: #3a54c6;
 }
 
 /* RESPONSIVE */
