@@ -46,27 +46,30 @@ export const config = {
     {
       name: "Skyruk Creative Studios",
       description:
-        "Developed a website to showcase my current and upcoming projects",
+        "Developed a website to showcase all my creative and technical projects",
       image: "projects/SkyrukCS.png",
       link: "https://skyrukcs.com/",
     },
     {
-      name: "Wordle Clone",
-      description: "Recreated the popular game Wordle",
-      image: "projects/WordleClone.png",
-      link: "https://skyrukcs.com/",
+      name: "Netflix Clone",
+      description:
+        "Developed a Netflix clone with a user interface similar to the real thing",
+      image: "projects/NetflixClone.png",
+      link: "https://ivanshklyaruk.github.io/Netflix-Clone/",
     },
     {
-      name: "Three Worlds",
-      description: "Developed captivating 3D portals",
-      image: "projects/ThreeWorlds.png",
-      link: "https://skyrukcs.com/",
+      name: "YouTube Clone",
+      description:
+        "Developed a YouTube clone with a user interface similar to the real thing",
+      image: "projects/YouTubeClone.png",
+      link: "https://ivanshklyaruk.github.io/YouTube-Clone/",
     },
     {
-      name: "Magic Match",
-      description: "Recreated my all-time favorite matching game",
-      image: "projects/MagicMatch.png",
-      link: "https://skyrukcs.com/",
+      name: "Tesla Slideshow",
+      description:
+        "Designed a 3D slideshow showcasing Tesla's innovative vehicles",
+      image: "projects/TeslaSlideshow.png",
+      link: "https://ivanshklyaruk.github.io/Tesla-Slideshow/",
     },
   ],
   contact: {
@@ -74,6 +77,7 @@ export const config = {
     address: "Toronto, Canada",
     socials: {
       linkedin: "https://www.linkedin.com/in/ishklyar/",
+      github: "https://github.com/IvanShklyaruk",
       twitter: "https://twitter.com/",
     },
     mail: "ishklyar@uwaterloo.ca",
